@@ -11,6 +11,18 @@
 (define exercise-tests
   (test-suite
    "Lecture Exercises"
+   
+   (test-case
+    "length"
+    (check-equal? (length '())
+                  0
+                  "(length '())")
+    (check-equal? (length '(1 2))
+                  2
+                  "(length '(1 2))")
+    (check-equal? (length '(1 (2 3)))
+                  2
+                  "(length '(1 (2 3)))"))
 
    (test-case
     "sum"

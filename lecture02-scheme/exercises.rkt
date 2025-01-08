@@ -3,6 +3,19 @@
 
 (define (square x) (* x x))
 
+; Compute the length of the list l
+;   The length of the empty list is 0.
+;   The length of a non-empty list is 1 + the length of the cdr of the list.
+;
+; Examples:
+;   (length '()) => 0
+;   (length '(1 2)) => 2
+;   (length '(1 (2 3))) => 2
+;
+
+(define (length xs)
+  'not-implemented)
+
 ;
 ; Compute the sum of a list of integers
 ;

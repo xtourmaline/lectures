@@ -14,4 +14,3 @@
  (if (null? xs)
      null
      (cons (+ 1 (first xs)) (inc-all (rest xs)))))
-  
