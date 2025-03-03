@@ -11,6 +11,7 @@
 -- the GHCi prompt.
 --
 
+
 module Examples where
 
 import Test.QuickCheck ( quickCheck )
@@ -24,7 +25,10 @@ data List a = Nil
   deriving (Eq, Ord, Show)
 
 mymap :: (a -> b) -> List a -> List b
-mymap = error "mymap unimplemented"
+mymap f a =
+  if null a
+  then Nil
+  else Cons (f (head a)) (mymap f (tail a)) 
 
 prop_map_inc :: Bool
 prop_map_inc = mymap (\x -> x + 1) (Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil)))) == (Cons 2 (Cons 3 (Cons 4 (Cons 5 Nil))))
